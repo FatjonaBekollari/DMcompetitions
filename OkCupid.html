@@ -128,6 +128,16 @@ $(document).ready(function () {
 <p>TEAM: FixedMind</p>
 <p>ROUND: 1st</p>
 <div id="references" class="section level3">
+<h3>Summary:</h3>
+<p>La nostra strategia è stata:</p>
+<ol style="list-style-type: decimal">
+<li>Analisi esplorativa delle variabili</li>
+<li>Feature engineering successivamente scartato</li>
+<li>Valutazione prestazione modelli con up e down sampling </li>
+<li>Random forest ranger down sampling</li>
+</ol>
+</div>
+<div id="references" class="section level3">
 <h3>References:</h3>
 <ul>
 <li><p>Copy/paste from caret html <a href="http://topepo.github.io/caret/index.html">The caret package</a></p></li>
@@ -143,36 +153,28 @@ $(document).ready(function () {
 <div id="non-standard-r-packages" class="section level3">
 <h3>Non-standard R packages</h3>
 <ul>
-<li>ggplot2</li>
-<li>VIM</li>
-<li>fasttime</li>
-<li>lubridate</li>
-<li>PCAmixdata</li>
-<li>lattice</li>
-<li>corrplot</li>
-<li>ROSE</li>
-<li>caret</li>
-<li>elasticnet</li>
-<li>pROC</li>
-<li>ranger</li>
-<li>ggRandomForest</li>
-<li>randomForestSCR</li>
+<li>ggplot2 (grafici per analisi esplorativa)</li>
+<li>VIM (importanza variabili random forest)</li>
+<li>lattice (grafici)</li>
+<li>corrplot (grafici per correlazione)</li>
+<li>ROSE (grafici curva ROC)</li>
+<li>caret (costruzione modelli)</li>
+<li>pROC (grafici curva ROC e calcolo AUC)</li>
+<li>ranger(random forest ranger)</li>
+<li>ggRandomForest (grafici per random forest)</li>
+<li>randomForestSCR (random forest)</li>
 </ul>
 </div>
 <div id="r-code-to-reproduce-the-last-submission" class="section level3">
 <h3>R code to reproduce the last submission:</h3>
 <pre class="r"><code>library(ggplot2)
 library(VIM)
-library(PCAmixdata)
-library(fasttime)
-library(lubridate)
 library(car)
 library(MASS)
 library(lattice)
 library(corrplot)
 library(ROSE)
 library(ranger)
-library(elasticnet)
 library(pROC)
 library(randomForestSRC)
 library(ggRandomForests)
@@ -306,12 +308,12 @@ phat &lt;- predict(fit_di,test_okc,type=&quot;prob&quot;)[,&quot;stem&quot;,drop
 # show first 6 predicted values
 head(phat)</code></pre>
 <pre><code>       stem
-1 0.6748396
-2 0.6316132
-3 0.4618109
-4 0.3656793
-5 0.5527336
-6 0.4851451</code></pre>
+1 0.6352087
+2 0.6202642
+3 0.4315415
+4 0.3931315
+5 0.4835306
+6 0.5148103</code></pre>
 </div>
 
 
@@ -320,7 +322,6 @@ head(phat)</code></pre>
 </div>
 
 <script>
-
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
@@ -328,8 +329,6 @@ function bootstrapStylePandocTables() {
 $(document).ready(function () {
   bootstrapStylePandocTables();
 });
-
-
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
