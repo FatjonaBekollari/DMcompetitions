@@ -1,2 +1,2 @@
-# DMcompetitions
+# Data Mining
 DM Competitions
